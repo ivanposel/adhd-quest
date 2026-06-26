@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD Quest — Vista ADHD centar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HOME SCREEN -->
+  <div id="screen-home" class="screen active">
+    <div class="home-content">
+      <div class="logo-badge">🏥 Vista ADHD centar</div>
+      <h1 class="game-title">ADHD Quest</h1>
+      <p class="game-subtitle">Istraži i nauči o ADHD-u!</p>
+      <div class="character-idle" id="home-character">🧒</div>
+      <p class="home-desc">Prati našeg junaka kroz 5 stanica znanja o ADHD-u. Odgovaraj na pitanja, rješavaj izazove i sakupljaj bodove!</p>
+      <button class="btn-primary" id="btn-start">Kreni na avanturu! →</button>
+    </div>
+    <button class="btn-mute" id="btn-mute" title="Uključi/isključi zvuk">🔊</button>
+  </div>
+
+  <!-- MAP SCREEN -->
+  <div id="screen-map" class="screen">
+    <div class="map-header">
+      <span class="map-title">🗺️ Mapa putovanja</span>
+      <span class="score-display">⭐ <span id="score-value">0</span> bodova</span>
+    </div>
+    <div class="map-world">
+      <div class="map-path"></div>
+      <div class="map-stations">
+        <div class="station-node" data-station="1" id="node-1">
+          <div class="station-icon">🧠</div>
+          <div class="station-label">Što je ADHD?</div>
+        </div>
+        <div class="station-node" data-station="2" id="node-2">
+          <div class="station-icon">🔍</div>
+          <div class="station-label">Simptomi</div>
+        </div>
+        <div class="station-node" data-station="3" id="node-3">
+          <div class="station-icon">💡</div>
+          <div class="station-label">Mitovi</div>
+        </div>
+        <div class="station-node" data-station="4" id="node-4">
+          <div class="station-icon">🌬️</div>
+          <div class="station-label">Fokus</div>
+        </div>
+        <div class="station-node" data-station="5" id="node-5">
+          <div class="station-icon">🤝</div>
+          <div class="station-label">Kako pomoći?</div>
+        </div>
+      </div>
+      <div class="map-character" id="map-character">🧒</div>
+    </div>
+    <div class="map-footer">
+      <p class="map-hint" id="map-hint">Klikni na stanicu ili pritisni gumb ispod!</p>
+      <button class="btn-primary" id="btn-enter-station">Uđi u stanicu →</button>
+    </div>
+  </div>
+
+  <!-- STATION SCREEN (shared shell) -->
+  <div id="screen-station" class="screen">
+    <div class="station-header">
+      <button class="btn-back" id="btn-back-map">← Mapa</button>
+      <div class="station-progress">
+        Stanica <span id="station-num">1</span> / 5
+      </div>
+      <span class="score-display">⭐ <span id="station-score-value">0</span></span>
+    </div>
+    <div class="station-body" id="station-body">
+      <!-- Dynamically populated per station -->
+    </div>
+  </div>
+
+  <!-- END SCREEN -->
+  <div id="screen-end" class="screen">
+    <div class="confetti-container" id="confetti"></div>
+    <div class="end-content">
+      <div class="end-badge">🏆</div>
+      <h2 class="end-title">Čestitamo!</h2>
+      <p class="end-subtitle">Završio/la si ADHD Quest!</p>
+      <div class="final-score-box">
+        <div class="final-score-label">Ukupan rezultat</div>
+        <div class="final-score-value" id="final-score">0</div>
+        <div class="final-grade" id="final-grade"></div>
+      </div>
+      <div class="end-info">
+        <h3>O Vista ADHD centru</h3>
+        <p>Vista ADHD centar pruža stručnu podršku djeci s ADHD-om i njihovim obiteljima kroz dijagnostiku, terapiju i edukaciju. Za više informacija obratite nam se!</p>
+      </div>
+      <button class="btn-primary" id="btn-restart">Igraj ponovo 🔄</button>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
